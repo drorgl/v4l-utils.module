@@ -1,0 +1,3 @@
+[submodule "v4l-utils_src"]
+	path = v4l-utils_src
+	url = git://linuxtv.org/v4l-utils.git
