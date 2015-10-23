@@ -18,11 +18,23 @@
 		 },
 		
 		
+		'configurations':{
+			'Debug':{
+				'defines':[
+					'DEBUG',
+				],
+			},
+			'Release':{},
+		},
+		
 		'conditions': [
 		  ['OS != "win"', {
 			'defines': [
 			  '_LARGEFILE_SOURCE',
 			  '_FILE_OFFSET_BITS=64',
+			],
+			'cflags':[
+				'-fPIC',
 			],
 			'conditions': [
 			  ['OS=="solaris"', {
@@ -30,11 +42,6 @@
 			  }],
 			  ['OS not in "solaris android"', {
 				'cflags': [ '-pthread' ],
-			  }],
-			  ['library == "shared_library"',{
-				'cflags':[
-					'-fPIC',
-				],
 			  }],
 			],
 		}],
@@ -52,19 +59,31 @@
 	[
 		{
 			'target_name': 'v4l2',
-			'type':'<(library)',
-
+			'type':'none',
+			
 			'include_dirs':[
 				'v4l-utils_src/lib/include',
 			],
 			'direct_dependent_settings': {
 				'include_dirs': [
-					'v4l-utils_src/include',
-					'v4l-utils_src/lib/include',
+					#'v4l-utils_src/include',
+					#'v4l-utils_src/lib/include',
 				],
 			 },
-			'sources':[
-				
+			 
+			
+			
+			'conditions':[
+				 ['OS == "linux"',{
+					'all_dependent_settings':{
+						'link_settings':{
+							'libraries':[
+								'-lv4l2',
+								'-lv4lconvert',
+							],
+						},
+					}
+				}],
 			],
 		},
 		{
@@ -91,6 +110,7 @@
 						'libraries':[
 							'-ldl',
 							'-lrt',
+							'-llibv4l',
 						],
 					},
 				}],
