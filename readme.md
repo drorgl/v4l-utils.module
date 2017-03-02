@@ -8,6 +8,9 @@ expose v4l-utils/v4l2 through gyp
 	static/shared library can be changed in the variables section of v4l-utils.gyp
 - can be used as part of a bigger gyp project (which was the original intent) :
 
+v4l library required:
+sudo apt-get install libv4l-dev
+
 ```
 'dependencies':[
 	'v4l-utils.module/v4l-utils.gyp:v4l2'
