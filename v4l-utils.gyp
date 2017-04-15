@@ -90,14 +90,22 @@
 			'target_name': 'libv4l2',
 			'type':'<(library)',
 			'dependencies':[
-				'../libglob.module/libglob.gyp:libglob',
+				#'../libglob.module/libglob.gyp:libglob',
+				'<!@(nnbu-dependency --headers libglob)',
+				'<!@(nnbu-dependency --dependency libglob)',
 				'libv4lconvert',
 			],
 			'defines':[],
 			'include_dirs':[
 				'v4l-utils_src/lib/include',
 				'v4l-utils_src',
+				'<!@(nnbu-dependency --headers libglob)',
 			],
+			 'link_settings':{
+					'libraries':[
+						'<!@(nnbu-dependency --lib-fix --libs libglob)',
+					],
+			 },
 			'direct_dependent_settings': {
 				'include_dirs': [
 					'v4l-utils_src/lib/include'
@@ -129,18 +137,25 @@
 			'target_name': 'libv4lconvert',
 			'type':'<(library)',
 			'dependencies':[
-				'../libjpeg-turbo.module/libjpeg.gyp:libjpeg',
+				#'../libjpeg-turbo.module/libjpeg.gyp:libjpeg',
+				'<!@(nnbu-dependency --dependency libjpeg-turbo)',
 			],
 			'defines':[],
 			'include_dirs':[
 				'v4l-utils_src/lib/include',
 				'v4l-utils_src',
+				'<!@(nnbu-dependency --headers libjpeg-turbo)',
 			],
 			'direct_dependent_settings': {
 				'include_dirs': [
 					'v4l-utils_src/lib/include',
 					'v4l-utils_src/',
 				],
+			 },
+			 'link_settings':{
+					'libraries':[
+						'<!@(nnbu-dependency --lib-fix --libs libjpeg-turbo)',
+					],
 			 },
 			 
 			'sources':[

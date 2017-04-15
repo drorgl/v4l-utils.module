@@ -3,3 +3,9 @@
 /libjpeg-turbo.module
 /build.linux64
 /libglob.module
+/node_modules
+/native_configuration.json
+/.github-authentication-cache
+/npm-debug.log*
+/build
+/build.sources

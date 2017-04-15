@@ -1,0 +1,30 @@
+{
+  "name": "v4l-utils.module",
+  "version": "1.0.1",
+  "description": "v4l-utils wrapper",
+  "main": "include_dirs.js",
+  "scripts": {
+    "install": "echo run standalone to build",
+    "standalone": "nnbu-configure && node-gyp configure  && node-gyp build",
+    "test": "node-gyp configure build",
+    "pack": "nnbu-pack -s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drorgl/v4l-utils.module.git"
+  },
+  "keywords": [
+    "v4l-utils",
+    "c"
+  ],
+  "gypfile": false,
+  "bugs": {
+    "url": "https://github.com/drorgl/v4l-utils.module/issues"
+  },
+  "homepage": "https://github.com/drorgl/v4l-utils.module#readme.md",
+  "devDependencies": {},
+  "dependencies": {
+    "node-gyp": "drorgl/node-gyp",
+    "node-native-build-utilities": "drorgl/node-native-build-utilities"
+  }
+}

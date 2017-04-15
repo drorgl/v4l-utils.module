@@ -1,0 +1,20 @@
+{
+    "dependencies": {
+        "libglob": {
+            "sources": [
+                "https://github.com/drorgl/libglob.module.git@libglob.gyp:libglob"
+            ],
+            "archived_sources": [
+                "https://github.com/drorgl/libglob.module/releases/download/v8.1.0/libglob.module.v8.1.0.7z@libglob.gyp:libglob"
+            ]
+        },
+        "libjpeg-turbo": {
+            "sources": [
+                "https://github.com/drorgl/libjpeg-turbo.module.git@libjpeg.gyp:libjpeg"
+            ],
+            "archived_sources": [
+                "https://github.com/drorgl/libjpeg-turbo.module/releases/download/v1.4.80/libjpeg-turbo.module.v1.4.80.7z@libjpeg.gyp:libjpeg"
+            ]
+        }
+    }
+}
